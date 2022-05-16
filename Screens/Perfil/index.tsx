@@ -1,24 +1,18 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function Perfil() {
-  const [username, setUsername] = useState(String);
-  const [password, setPassword] = useState(String);
+  const [nome, setNameCadastro] = useState(String);
+  const [dataNascimento, setDataNascimento] = useState(String);
+  const [id, setId] = useState(Number);
+  const [nacionalidade, setNacionalidade] = useState(String);
 
-  const login = () => {
-    // Chamada API (POST -> username, password)
-    console.log(username, password, 'login');
-  }
 
-  const register = () => {
-    // Carregar Tela de Cadastro [ ]
-    console.log(username, password, 'register');
-  }
 
   // Class -> Interface
   class user {
     static nome: string;
-    static dataNasc: string;
+    static dataNascimento: string;
     static id: number;
     static nac: string;      
   }
@@ -26,20 +20,42 @@ export default function Perfil() {
 
   return (
     <View style={styles.container}>
-      {/* Imagem -> Logo */}
-      {/* <Image></Image> */}
-      <Text>Seja bem vindo {username}</Text>
-
-      <Text>Nome: {user.nome}</Text>
-
-      <Text>Data de nascimento: {user.dataNasc}</Text>
-
-      <Text>Matrícula: {user.id}</Text>
-
-      <Text>Nacionalidade: {user.nac}</Text>
-
-      <Button title="Editar"></Button>
+      <Text style={{ 
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 20,
+      }}>
+        Dados do Perfil
+      </Text>
       
+      <Text>
+        Seja bem vindo {nome}
+        style={styles.textStyle}
+      </Text>
+
+      <Text>
+        Nome: {nome}
+        style={styles.textStyle}
+        </Text>
+
+      <Text>
+        Data de nascimento: {dataNascimento}
+        style={styles.textStyle}
+        </Text>
+
+      <Text>
+        Matrícula: {id}
+        style={styles.textStyle}
+        </Text>
+
+      <Text>
+        Nacionalidade: {nacionalidade}
+        style={styles.textStyle}
+        </Text>
+
+        <TouchableOpacity  style={styles.buttonStyle}>
+        <Text style={styles.buttonTextStyle}>Voltar</Text>
+      </TouchableOpacity>      
     </View>
   );
 }
@@ -51,4 +67,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  inputStyle: {
+
+    borderWidth: 2,
+    borderColor: '#000',
+    borderRadius: 10,
+
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+
+    width: '60%',
+    marginBottom: 10,
+  },
+
+  buttonStyle: {
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#0fb9ff', 
+    alignItems: 'center',
+    borderRadius: 10,
+    width: '30%',
+  },
+  buttonTextStyle: {
+    color: '#fff',
+    fontSize: 10,
+    fontWeight: 'bold',
+  }
 });
