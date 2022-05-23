@@ -1,5 +1,5 @@
 import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import { propsNavigationStack } from "./Models";
 
@@ -9,7 +9,7 @@ import Cadastro from "../../Screens/Cadastro";
 import Pacote   from "../../Screens/Pacote";
 import Perfil   from "../../Screens/Perfil";
 
-const { Navigator, Screen } = createNativeStackNavigator<propsNavigationStack>();
+const { Navigator, Screen } = createStackNavigator<propsNavigationStack>();
 
 export default function() {
     return (
