@@ -57,7 +57,7 @@ export default function Cadastro() {
       keyboardType='numbers-and-punctuation'
       ></TextInput>
       <TextInput onChangeText={(e)=>{setAdress(e)}}    
-      placeholder='Endereço'
+      placeholder='CEP'
       style={styles.inputStyle}   
       ></TextInput>
       <TextInput onChangeText={(e)=>{setUsername(e)}}  

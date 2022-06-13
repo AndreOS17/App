@@ -4,18 +4,26 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 export default function Pacote() {
   const [name, setNamePacote] =           useState(String);
   const [descricao, setDescricao] =     useState(String);
+  const [status, setStatus] =     useState(Boolean); 
+  const [origem, setOrigem] =             useState(String);
   const [destino, setDestino] =             useState(String);
   const [valor, setValor] =       useState(Number);
   const [dataInicio, setDataInicio] =       useState(Date);
   const [dataFim, setDataFim] =       useState(Date);
+  const [idResponsavel, setIdRes] =       useState(Number);
+
 
   class pacote {
     static nome: string;
     static desc: string;
+    static status: boolean;
+    static origem: string;
     static destino: string;
     static valor: number;
     static dataInicio: Date;
-    static dataFim: Date;      
+    static dataFim: Date;
+    static idResponsavel: number;
+
   }
 
   return (
@@ -34,6 +42,9 @@ export default function Pacote() {
       <TextInput onChangeText={(e)=>{setDescricao(e)}}  placeholder='Descricao do Pacote'
       style={styles.inputStyle}
       ></TextInput>
+      <TextInput onChangeText={(e)=>{setOrigem(e)}}  placeholder='Origem'
+      style={styles.inputStyle}
+      ></TextInput>
       <TextInput onChangeText={(e)=>{setDestino(e)}}  placeholder='Destino'
       style={styles.inputStyle}
       ></TextInput>
@@ -44,6 +55,9 @@ export default function Pacote() {
       style={styles.inputStyle}
       ></TextInput>
       <TextInput onChangeText={(e)=>{setDataFim(e)}}  placeholder='Data de Finalização da Viagem'
+      style={styles.inputStyle}
+      ></TextInput>
+      <TextInput onChangeText={(e)=>{setIdRes(e)}}  placeholder='Id do responsável do pacote'
       style={styles.inputStyle}
       ></TextInput>
       <TouchableOpacity style={styles.buttonStyle}>
